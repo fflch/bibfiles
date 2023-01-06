@@ -22,17 +22,17 @@
             <tr>
                 <td>{{$arquivo->name}}</td>
                 <td>            
-                <a href="/{{$arquivo->original_name}}" type="application/pdf" target="pdf-frame"><i class="fas fa-file-pdf"></i> {{$arquivo->original_name}} </a>
+                <a href="/{{$arquivo->original_name}}" type="application/pdf image/bmp" target="pdf-frame"><i class="fas fa-file"></i> {{$arquivo->original_name}} </a>
                 </td>
         @can('admin')
                 <td>
-                    <a href="/files/{{$arquivo->id}}" type="application/pdf" target="pdf-frame"><i class="fas fa-file-pdf"></i></a>
+                    <a href="/files/{{$arquivo->id}}" type="application/pdf image/bmp" target="pdf-frame"><i class="fas fa-file"></i></a>
                 <td>
 
             <form method="post" action="/files/{{$arquivo->id}}">         
-            @csrf
-            @method('delete')
-                    <button class="botao" type="submit" onclick="return confirm('Tem certeza que deseja deletar?')"><i class="fas fa-trash-alt"></i></button>
+                @csrf
+                @method('delete')
+                <button class="btn btn-default btn-sm" type="submit" onclick="return confirm('Tem certeza que deseja deletar?')"><i class="fas fa-trash-alt"></i></button>
             </form></td>
         @endcan('admin')
             </tr>
