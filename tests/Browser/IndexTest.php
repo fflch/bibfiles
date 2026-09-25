@@ -11,7 +11,7 @@ class IndexTest extends DuskTestCase
     /**
      * A basic browser test example.
      */
-    public function test_basic_example(): void
+    public function test_index(): void
     {
         $this->browse(function (Browser $browser) {
             $browser->visit('/')
